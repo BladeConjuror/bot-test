@@ -3,33 +3,70 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
 }
 
 #calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    width: 280px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-.header div, .day {
+.month {
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.month h2 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.days-header, .dates-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.days-header div {
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    background-color: #333;
+    color: white;
+    border-radius: 4px;
+}
+
+.date {
     text-align: center;
     padding: 10px;
-    background-color: #f0f0f0;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    cursor: pointer;
     border: 1px solid #ddd;
 }
 
-.header div {
-    font-weight: bold;
-    background-color: #333;
+.date.today {
+    background-color: #4CAF50;
     color: white;
 }
 
-.day {
-    cursor: pointer;
-    transition: background-color 0.3s;
+.date.special-day {
+    background-color: #FFD700;
+    color: black;
 }
 
-.day:hover {
-    background-color: #add8e6;
+.date:hover {
+    background-color: #e0e0e0;
 }
+
